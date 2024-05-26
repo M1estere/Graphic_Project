@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && Grounded())
         {
-            GetComponent<PlayerAnimatorController>().Jump();
             Jump();
         }
 
@@ -49,11 +48,13 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
+        GetComponent<PlayerAnimatorController>().Jump();
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpingPower);
     }
 
     public void Jump(float force)
     {
+        GetComponent<PlayerAnimatorController>().Jump();
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, force);
     }
 
