@@ -9,6 +9,7 @@ namespace Player.StateMachine
         protected PlayerData _playerData;
 
         protected float _startTime;
+        protected bool _isAnimationFinished;
         
         private string _animBoolName;
 
@@ -23,27 +24,27 @@ namespace Player.StateMachine
         public virtual void Enter()
         {
             DoChecks();
+            _player.Anim.SetBool(_animBoolName, true);
             _startTime = Time.time;
+            _isAnimationFinished = false;
         }
 
         public virtual void Exit()
         {
-            
+            _player.Anim.SetBool(_animBoolName, false);
         }
 
-        public virtual void LogicUpdate()
-        {
-            
-        }
+        public virtual void LogicUpdate() { }
 
         public virtual void PhysicsUpdate()
         {
             DoChecks();
         }
 
-        public virtual void DoChecks()
-        {
-            
-        }
+        public virtual void DoChecks() { }
+
+        public virtual void AnimationTrigger() { }
+
+        public virtual void AnimationFinishTrigger() => _isAnimationFinished = true;
     }
 }
