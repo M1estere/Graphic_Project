@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public abstract class DraggableObject : MonoBehaviour
 {
-    public bool CanBeDragged 
+    /*public bool CanBeDragged 
     { 
         get
         {
@@ -103,5 +103,5 @@ public abstract class DraggableObject : MonoBehaviour
         return _collider.OverlapPoint(point);
     }
 
-    public void SetPlayerTransform(Transform player) => _playerTransform = player;
+    public void SetPlayerTransform(Transform player) => _playerTransform = player;*/
 }

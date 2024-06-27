@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CircleArea : MonoBehaviour
 {
-    [SerializeField, Range(10, 50)] private float _power;
+    /*[SerializeField, Range(10, 50)] private float _power;
     [Space(5)]
 
     [SerializeField, Range(0, 50)] private int _segments = 50;
@@ -84,5 +84,5 @@ public class CircleArea : MonoBehaviour
 
             angle += (360f / _segments);
         }
-    }
+    }*/
 }

@@ -2,7 +2,7 @@
 
 public class DraggableSharp : DraggableObject
 {
-    [SerializeField] private string _maskToStay = "SoftWall";
+    /*[SerializeField] private string _maskToStay = "SoftWall";
 
     private void FixedUpdate()
     {
@@ -65,5 +65,5 @@ public class DraggableSharp : DraggableObject
     {
         _rigidbody.gravityScale = 1;
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
-    }
+    }*/
 }

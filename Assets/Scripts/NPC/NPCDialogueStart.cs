@@ -17,7 +17,6 @@ public class NPCDialogueStart : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent(out PlayerController playerController) == false) return;
-
         _canActivate = false;
     }
 
@@ -25,9 +24,9 @@ public class NPCDialogueStart : MonoBehaviour
     {
         if (!_canActivate) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             _dialogBox.SetActive(true);
-        }
+        }*/
     }
 }
