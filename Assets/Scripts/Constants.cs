@@ -1,5 +1,14 @@
+using UnityEngine;
+
 public static class Constants
 {
+    [System.Serializable]
+    public struct WeaponAttackDetails
+    {
+        [field: SerializeField] public string AttackName { get; private set; }
+        [field: SerializeField] public float DamageAmount { get; private set; }
+    }
+    
     /// <summary>
     /// INPUTS
     /// </summary>

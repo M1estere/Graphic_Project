@@ -6,6 +6,6 @@ namespace Player.Data
     public class WeaponData : ScriptableObject
     {
         [field: Header("Animations")]
-        [field: SerializeField] public int AnimationsAmount { get; private set; }
+        [field: SerializeField] public int AttacksAmount { get; protected set; }
     }
 }

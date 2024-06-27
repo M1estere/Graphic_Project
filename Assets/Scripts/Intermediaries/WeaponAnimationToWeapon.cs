@@ -25,5 +25,10 @@ namespace Intermediaries
         {
             _weapon.AnimationTurnOnFlipTrigger();
         }
+
+        private void AnimationActionTrigger()
+        {
+            _weapon.AnimationActionTrigger();
+        }
     }
 }
