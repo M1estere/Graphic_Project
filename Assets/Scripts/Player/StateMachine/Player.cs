@@ -1,3 +1,4 @@
+using Player.Data;
 using Player.Input;
 using Player.PlayerStates.Substates;
 using Player.PlayerStates.Superstates;
@@ -26,6 +27,7 @@ namespace Player.StateMachine
         public Animator Anim { get; private set; }
         public PlayerInputHandler InputHandler { get; private set; }
         public Rigidbody2D PlayerRigidbody { get; private set; }
+        public PlayerInventory Inventory { get; private set; }
         #endregion
         
         #region Check Transforms
@@ -58,7 +60,12 @@ namespace Player.StateMachine
             Anim = GetComponent<Animator>();
             InputHandler = GetComponent<PlayerInputHandler>();
             PlayerRigidbody = GetComponent<Rigidbody2D>();
+            Inventory = GetComponent<PlayerInventory>();
+            
             FacingDirection = 1;
+            
+            PrimaryAttackState.SetWeapon(Inventory.Weapons[(int)CombatInputs.primary]);
+            // SecondaryAttackState.SetWeapon(Inventory.Weapons[(int)CombatInputs.secondary]);
             
             StateMachine.Initialize(IdleState);
         }

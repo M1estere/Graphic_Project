@@ -1,3 +1,4 @@
+using Player.Data;
 using Player.Input;
 using Player.StateMachine;
 using UnityEngine;
