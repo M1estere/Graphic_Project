@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D), typeof(PlayerController))]
 public class PlayerAnimatorController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    /*[SerializeField] private Animator _animator;
     [SerializeField] private string _speedParameter;
     [Space(5)]
 
@@ -12,6 +12,17 @@ public class PlayerAnimatorController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private PlayerController _playerController;
 
+    private bool _climbing = false;
+    
+    public void SetClimbing(bool state)
+    {
+        if (_climbing == state) return;
+        
+        print(state);
+        _climbing = state;
+        _animator.SetBool("Climbing", _climbing);
+    }
+    
     private void Start()
     {
         _playerController = GetComponent<PlayerController>();
@@ -42,5 +53,5 @@ public class PlayerAnimatorController : MonoBehaviour
     public void StopJumping()
     {
         _animator.SetBool("IsJumping", false);
-    }
+    }*/
 }
