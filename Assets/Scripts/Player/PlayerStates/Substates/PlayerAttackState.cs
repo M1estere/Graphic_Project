@@ -7,6 +7,9 @@ namespace Player.PlayerStates.Substates
     public class PlayerAttackState : PlayerAbilityState
     {
         private Weapon _weapon;
+
+        private int _xInput;
+        private bool _shouldCheckFlip;
         
         public PlayerAttackState(StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) 
             : base(player, stateMachine, playerData, animBoolName)
@@ -26,7 +29,19 @@ namespace Player.PlayerStates.Substates
             
             _weapon.ExitWeapon();
         }
-        
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            _xInput = _player.InputHandler.NormalizedInputX;
+
+            if (_shouldCheckFlip)
+            {
+                _player.CheckIfShouldFlip(_xInput);
+            }
+        }
+
         public void SetWeapon(Weapon weapon)
         {
             _weapon = weapon;
@@ -38,6 +53,11 @@ namespace Player.PlayerStates.Substates
             base.AnimationFinishTrigger();
 
             _isAbilityDone = true;
+        }
+
+        public void SetFlipCheck(bool value)
+        {
+            _shouldCheckFlip = value;
         }
     }
 }

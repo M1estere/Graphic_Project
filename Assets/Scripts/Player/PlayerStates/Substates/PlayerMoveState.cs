@@ -25,6 +25,12 @@ namespace Player.PlayerStates.Substates
         {
             base.LogicUpdate();
 
+            if (_player.StateMachine.CurrentState is PlayerAttackState)
+            {
+                _player.SetVelocityX(0);
+                return;
+            }
+            
             _player.CheckIfShouldFlip(_xInput);
             
             _player.SetVelocityX(_playerData.MovementVelocity * _xInput);

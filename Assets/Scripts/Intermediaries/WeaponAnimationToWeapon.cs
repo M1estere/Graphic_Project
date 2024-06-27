@@ -15,5 +15,15 @@ namespace Intermediaries
         {
             _weapon.AnimationFinishTrigger();
         }
+
+        private void AnimationTurnOffFlipTrigger()
+        {
+            _weapon.AnimationTurnOffFlipTrigger();
+        }
+
+        private void AnimationTurnOnFlipTrigger()
+        {
+            _weapon.AnimationTurnOnFlipTrigger();
+        }
     }
 }
